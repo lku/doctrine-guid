@@ -70,7 +70,9 @@ class EventSubscriberTest extends PHPUnit_Framework_TestCase
         $propertyReflection = new ReflectionProperty('LKu\DoctrineGuidTest\Asset\Entity', 'guid');
         $propertyReflection->setAccessible(true);
 
-        $metadata = $this->getMockBuilder('Doctrine\ORM\Mapping\ClassMetadataInfo')->disableOriginalConstructor()->getMock();
+        $metadata = $this->getMockBuilder('Doctrine\ORM\Mapping\ClassMetadataInfo')
+            ->disableOriginalConstructor()
+            ->getMock();
         $metadata->expects($this->any())
             ->method('getFieldNames')
             ->will($this->returnValue(['guid']));
