@@ -1,0 +1,24 @@
+{
+    "name": "lku/doctrine-guid",
+    "type": "library",
+    "description": "Doctrine Event Subscriber for automatic generation GUID/UUID",
+    "license": "MIT",
+    "require": {
+        "php": "~5.4",
+        "doctrine/orm": "~2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "squizlabs/php_codesniffer": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LKu\\DoctrineGuid\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LKu\\DoctrineGuidTest\\": "tests"
+        }
+    }
+}
