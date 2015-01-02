@@ -30,7 +30,7 @@ class EventSubscriberTest extends PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->guidGenerator = $this->getMockBuilder(AbstractIdGenerator::class)->getMockForAbstractClass();
+        $this->guidGenerator = $this->getMockBuilder('Doctrine\ORM\Id\AbstractIdGenerator')->getMockForAbstractClass();
     }
 
     /**
@@ -67,10 +67,10 @@ class EventSubscriberTest extends PHPUnit_Framework_TestCase
 
         $entity = new Entity();
 
-        $propertyReflection = new ReflectionProperty(Entity::class, 'guid');
+        $propertyReflection = new ReflectionProperty('LKu\DoctrineGuidTest\Asset\Entity', 'guid');
         $propertyReflection->setAccessible(true);
 
-        $metadata = $this->getMockBuilder(ClassMetadataInfo::class)->disableOriginalConstructor()->getMock();
+        $metadata = $this->getMockBuilder('Doctrine\ORM\Mapping\ClassMetadataInfo')->disableOriginalConstructor()->getMock();
         $metadata->expects($this->any())
             ->method('getFieldNames')
             ->will($this->returnValue(['guid']));
@@ -81,7 +81,7 @@ class EventSubscriberTest extends PHPUnit_Framework_TestCase
             ->method('getReflectionProperty')
             ->will($this->returnValue($propertyReflection));
 
-        $em = $this->getMockBuilder(EntityManager::class)->disableOriginalConstructor()->getMock();
+        $em = $this->getMockBuilder('Doctrine\ORM\EntityManager')->disableOriginalConstructor()->getMock();
         $em->expects($this->any())
             ->method('getClassMetadata')
             ->will($this->returnValue($metadata));
