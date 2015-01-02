@@ -1,6 +1,7 @@
 # Doctrine GUID Event Subscriber
 
 [![Build Status](https://travis-ci.org/lku/doctrine-guid.svg?branch=master)](https://travis-ci.org/lku/doctrine-guid)
+[![Code Coverage](https://scrutinizer-ci.com/g/lku/doctrine-guid/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/lku/doctrine-guid/?branch=master)
 
 This library provides [event subscriber](http://docs.doctrine-project.org/en/latest/reference/events.html) 
 for [Doctrine ORM](http://www.doctrine-project.org/projects/orm.html), which 
