@@ -10,6 +10,10 @@ matrix:
   allow_failures:
     - php: hhvm
 
+before_script:
+  - composer self-update
+  - composer update  --prefer-source
+
 script:
   - ./vendor/bin/phpunit --coverage-clover=./build/clover.xml
   - ./vendor/bin/phpcs --standard=PSR2 ./src/ ./tests/
