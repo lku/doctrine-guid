@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/lku/doctrine-guid.svg?branch=master)](https://travis-ci.org/lku/doctrine-guid)
 [![Code Coverage](https://scrutinizer-ci.com/g/lku/doctrine-guid/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/lku/doctrine-guid/?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/54a7213c27b01400540001bf/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54a7213c27b01400540001bf)
 
 This library provides [event subscriber](http://docs.doctrine-project.org/en/latest/reference/events.html) 
 for [Doctrine ORM](http://www.doctrine-project.org/projects/orm.html), which 
