@@ -12,7 +12,7 @@ entity field with [guid](http://docs.doctrine-project.org/projects/doctrine-orm/
 ## Installation
 
 ```sh
-composer require lku/doctrine-guid:~1.0
+composer require lku/doctrine-guid
 ```
 
 ## Requirements
