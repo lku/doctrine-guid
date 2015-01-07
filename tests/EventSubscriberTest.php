@@ -65,7 +65,7 @@ class EventSubscriberTest extends PHPUnit_Framework_TestCase
 
         $subscriber = new EventSubscriber($this->guidGenerator);
 
-        $entity = new Entity();
+        $entity = new Entity(null);
 
         $propertyReflection = new ReflectionProperty('LKu\DoctrineGuidTest\Asset\Entity', 'guid');
         $propertyReflection->setAccessible(true);
@@ -88,9 +88,15 @@ class EventSubscriberTest extends PHPUnit_Framework_TestCase
             ->method('getClassMetadata')
             ->will($this->returnValue($metadata));
 
+        // generate new GUID if not exists
         $args = new LifecycleEventArgs($entity, $em);
         $subscriber->prePersist($args);
-
         $this->assertEquals($testGuid, $entity->getGuid());
+
+        // don't update GUID
+        $entity = new Entity('test');
+        $args = new LifecycleEventArgs($entity, $em);
+        $subscriber->prePersist($args);
+        $this->assertEquals('test', $entity->getGuid());
     }
 }

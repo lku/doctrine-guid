@@ -11,6 +11,14 @@ class Entity
     protected $guid;
 
     /**
+     * @param string $guid
+     */
+    public function __construct($guid)
+    {
+        $this->guid = $guid;
+    }
+
+    /**
      * @return string
      */
     public function getGuid()
