@@ -4,7 +4,7 @@
     "description": "Doctrine Event Subscriber for automatic generation GUID/UUID",
     "license": "MIT",
     "require": {
-        "php": ">=5.4.0",
+        "php": "^5.4 || ^7.0",
         "doctrine/orm": "~2.4"
     },
     "require-dev": {
